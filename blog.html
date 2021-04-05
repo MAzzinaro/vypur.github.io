@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+    <link href="css/meleemasters.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar twopiece fixed-top navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right navbar-inverse" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+            <img src="./img/Logo_Render.png" width="40" height="33" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="info.html">Learn More</a>
+                <a class="nav-item nav-link" href="blog.html">Dev Blog</a>
+                <a class="nav-item nav-link" href="characters.html">Characters</a>
+                <a class="nav-item nav-link" href="demo.html">Play Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid blog">
+        <div class="row main">
+            <div class="col-12">
+            </div>
+            <div class="col-12 blend">
+            </div>
+        </div>
+
+
+        <div class="row content-row overview" aria-label="overview">
+            <div class="col-12 col-sm-12 offset-md-3 col-md-6">
+            <section id="updates4">
+                    <h2 class="post-title display-4">July 28th, 2017</h2>
+                    <div class="embed-responsive embed-responsive-16by9 masters-video">
+                        <iframe class="masters-video" width="560" height="315" src="https://www.youtube.com/embed/10oz4SZpyV0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="row-blog">
+                        <p>
+                            Hello Everyone, After a bit of radio silence I've spent a lot of time working hard on new and cool aspects to Melee Masters. I won't touch on all of them in this blog as I'd like to release those in more specific context so you can fully appreiacte what they bring to the game on their own. 
+
+                            In this blog, I'll be touching on a general status of the game, game mechanics changes and character design.
+                            <h2 class="display-5 blog-section">Status</h2>
+                        </p>
+                        <p>
+                            Currently, the game g ets more and more polished each day. A large bug was fixed recently with DI and SDI being broken while grounded, and a big fix for an invulnerability bug that would crow up when hit on the last frame before invulnerability on a grounded bounce. There have also been major VFX improvements. Shielding is now a lot more clear as special effects have been added when moves hit shields versus players. Part of the on-going improvements to visuals and clarity, new post processing effects were added along with normal map improvements and better shaders to help give the characters more clarity and really pop out of the surroundings. Anti-aliasing before was causing a blurring effect on edges to the point where characters in general looked blurry. Along with gameplay improvements, 3 mechanics were changes, and 4 characters are getting new models!
+                            </p>
+
+                        <p>
+                            <h2 class="display-5 blog-section">Mechanics changes</h2>
+                        </p>
+                        <p>
+                            Spotdodge and PowerShield out -> Parry in.
+
+                            So this is a big topic in game design, offensive versus defensive tools. I've read a lot recently on what makes games offensive or defensive and how those limit design space (in regard to designing attacks). What I think it boils down to is: If you give everyone known, strong defensive tools, you can then expand the offensive tools design space, because you know every character will have some defense against it. Not in reference to my game, but take combo-breaker moves. These may be seen as a defensive oriented mechanics. However, when you can only combo-break once per round. it means that characters can now be giving a lot stronger combos, because even if we give everyone more combos, we know there is a defense against them. It's a push and pull type deal where even where there are strong defensive options, if we add even stronger offensive options, we can really push the boundaries of characters by not limiting their attack movesets to simple forward and upward slashes. 
+                        </p>
+                        <p>
+                            So how does Parrying work? Basically you press the Shield button + the main Attack button to perform a parry. Which places you in a "counter" state for a few frames. If hit, the enemy is paused for a duration proportional to the base hitstun of the attack they hit you with. So for example, say you counter Andor's forward smash. Normally, this move has a base hitstun of 45 frames. This will place Andor in hit-pause (doesn't move, and his animation is frozen) for 20  frames (the maximum). And makes it so his sword can no longer hit you until his sword hitbox is reset. Multihit moves reset hitboxes and allow characters to be hit by the same hitbox multiple times. This was always the counter to spotdodge, strong multi-hit moves. To reference SSBM, think of Pickachu's Down Smash. This move will never lose to spot-dodge, because it's active hitbox frames are longer than the spotdodge invulnerability. With this parry system, say the initial multi-hits of that down smash do base 10 frames of hitstun, the parry would freeze pickahu for 5 frames. What this means is that even though multi-hits are parryable, they still should beat most of the time. There is the potential to parry the following hits, which could lead to some crazy counters of parryinig every hit of a multi-hit move, followed up by a punish. So this keeps the single hit vs. multi-hit balance of shielding beating multi-hit and parry being single hit, but fixes the risk-reward aspect of spotdodge where in most cases, spotdodge would be useless as aerial recovery frames are often faster than the 24 frames of action that spotdodge normally locks you into. So why remove powershielding? Powershielding was initially like this parry is now. However this lacked the proper risk to go with the abundant reward. Mistiming a powershield would simply result in...shielding, which is no where near enough risk for the reward of an instant punish. 
+                        </p>
+                        <p>
+                            I believe these mechanics changes allow me to dive into the field of strong offensive options, when we know moves can be parried. This also has the added bonus of removing the spot-dodge input. With this removed, shield-dropping is now much cleaner in it's input. No longer will you have the clunkiness of rolling or spotdodging or actually shield dropping, as to shield drop now simply flicking the control stick down in the same manner you would to platform drop while not in shield results in a shield drop. Again, this might dive into "well thats too strong a defensive option". Which is true, however shielddropping can be used offensively. For example, to avoid a turn around while dropping through and drifting towards an enemy backwards. This also opens up the design space of offensive aerials to attack at a diagonal upwards angle. Previously, and in most smash games, Upwards aerials hit straight above you, forward aerials hit straight in front of you or diagonala downwards in front of you, there aren't a lot of moves that hit at that angle. But since we made shield dropping stronger, we can now make offensive moves stronger for that angle of attack to compensate. 
+                            </p>
+
+                        <p>
+                            <h2 class="display-5 blog-section">Character Design</h2>
+                        </p>
+                        <p>
+                            Character design is something that people study for years to perfect. It's something that I'm aware of the principals of, but haven't personally been able to implement properly (as you can probably tell). I'm working with a good character designer at the moment to really put these principals to work with Melee Masters. 4 Characters are currently being remodeled at the time of this blog. The new designed will be released as they are completed and I really look forward to having them get shown off. PArt of the redesigns, however, is that they need to work with existing character, otherwise the game will look very distorted with half of the characters being completely different in style. So while the characters will be different and have their own styles, we're trying our hardest to make them fit in with existing characters as well. 
+                        </p>
+                        <p>
+                            With these and more redesigns to come, I feel this really brings Melee Masters up to the level we all want it to be at. With strong characters and strong gameplay, a true spiritual sucessor to SSBM and Project M. 
+                        </p>
+                        <p>
+                            That's all for now, I hope you enjoyed this insight into the design process. I know I've been pretty quiet lately, a lot of this work requires a lot of mental effort but as it becomes more and more complete, I'll release more and more as it becomes presentable. 
+                        </p>
+
+    
+                    </div>
+                </section>
+                <hr>
+            <section id="royal flush recap">
+                    <h2 class="post-title display-4">May 16th, 2017</h2>
+                    <div class="embed-responsive embed-responsive-16by9 masters-video">
+                        <iframe class="masters-video" width="560" height="315" src="https://www.youtube.com/embed/CMw_dqmVTpg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="row-blog">
+                        <p>
+                            <h2 class="display-5 blog-section">Royal Flush Recap</h2>
+                        </p>
+                        <p>
+                            Royal Flush was a great event. A lot of subjects are touched on and explored in the vlog so I'd recommend giving that a viewing. 
+                            </p>
+                        <p>
+                            Here's a quick rundown of what was touched on:
+                            <li>Royal Flush Reactions</li>
+                            <li>Addressing Feedback</li>
+                            <li>Pro/High Level Players Feedback</li>
+                            <li>General Feedback</li>
+                            <li>Plans for the demo</li>
+                            <li>Gameplay Improvement Strategy</li>
+                            </p>
+
+
+                    </div>
+                </section>
+                <hr>
+                <section id="updates2">
+                    <h2 class="post-title display-4">May 11th, 2017</h2>
+                    <div class="embed-responsive embed-responsive-16by9 masters-video">
+                        <iframe class="masters-video" width="560" height="315" src="https://www.youtube.com/embed/0hLL8gX2mHg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="row-blog">
+                        <p>
+                            <h2 class="display-5 blog-section">Status</h2>
+                        </p>
+                        <p>
+                            Currently, the game is getting more and more polished every day, friends that come playtest the game from week to week report enourmous changes in game feel and fluidity and this is expected to continue as we move along. Very minor details add up to large changes in feel and Melee Masters is quickly approaching an extremely good area from a gameplay point of view. We currently have an audio designer working on Sound FX and a professional animator to likely come on board to really help the game evolve into it's true potential and bring it up to the quality both I and you would like. As for the game itself, a number of issues brought up by others have been addressed, namely, out of shield options and shielding in general is a LOT less clunky, and you can not act immediately after landing from an airdodge or just from a normal jump. Previously, people had reported a delay in action here, I was unaware of an unintended change that adid cause there to be about a 10 frame section where you could not attack after landing that has been nullified.  
+                            </p>
+
+                        <p>
+                            <h2 class="display-5 blog-section">Balance</h2>
+                        </p>
+                        <p>
+                            While balance is still very tentative, after reading comments and playtesting internally, I'd like to share some of the balance thoughts to both get your opinion and help you understand my approach. 
+
+                            Currently, Light characters are a bit too strong, they fly too f ar for most characters to combo properly. So to balance this, there are two major options that I see. First would be to reverse the manner in which hitstun is applied based on character weight. currently, the heavier the character -> the longer the hitstun. The other method would be to change the hit-stun weight of the character.  each character has a modified weight when flying from an attack. for lighter characters we could simply adjust this so that they don't float as far above when stunned. I'm leaning towards option one because it gives both the attacking player and the player being attacked more options. the player attacking has longer to respond but still has to contend with the distance. and t he player being attacked has more control as the DI will feel more impactful when you are flying further/longer. More on balance will come but this is just a brief overview of my approach.
+                            </p>
+
+                        <p>
+                            <h2 class="display-5 blog-section">Plans</h2>
+                        </p>
+                        <p>
+                            Plans are pretty tentative as a lot of this relies on general support to achieve the quality of the product I'd like to create. However here is a rough outline:
+
+                            -Demo : end of may/early june
+                            -Alpha: Summer 
+                            -Beta: Winter
+                            -Release: Early 2018
+
+                            The demo will not be highly promoted, and it will be free of charge, however It will lack online functionality. The reasoning for this is that if you are interested in getting involved in the development process, gettting a head start on the game and providing valuable feedback to me, you can grab it and get used to it, see if you want to support me in the future. The reason for lack of online is because that functionality is still in the works. Online play does work, however in it's current state it is far too buggy/shaky to be part of something I'd like to present, and I wouldn't want people jumping to the conclusion that online play wouldn't be viable for this game. The alpha will include online play, however the demo is really for people who are skeptical about the game, or are interested in getting involved. 
+                            The beta and release are very tentative and contingient upon the levels of support once the crowdfunding is restarted (likely around the same time as the alpha). These will feature more characters and more features up until the eventual release. After release there will be constant character updates/additions, content patches and feature additions. 
+                        </p>
+
+    
+                    </div>
+                </section>
+                <hr>
+                <section id="preview">
+                    <h2 class="post-title display-4">March 28th, 2017</h2>
+                    <div class="embed-responsive embed-responsive-16by9 masters-video">
+                        <iframe class="masters-video" width="560" height="315" src="https://www.youtube.com/embed/vhQNaj-l7_s" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="row-blog">
+                        <p>
+                            <h2 class="display-5 blog-section">Status</h2>
+                        </p>
+                        <p>
+                            Following the showing of the game at PAX East, there was a bit of a realization as I posted the initial trailer i had been
+                            working on. Namely, based on the feedback from the event in combination with the feedback online,
+                            I realized really all the game had going for it at the moment was gameplay. From those who actually
+                            played the game at PAX, the response was in general very optimistic and many players enjoyed
+                            it to the point they came back multiple days to play. There were of course general criticisms,
+                            from character design to general feel of the game and those will be taken into consideration
+                            moving forward in development, but again it was the gameplay, not really the animations themselves
+                            or the character's art particularly. So, using that as the base I'd like to show as much quality
+                            gameplay as possible and as soon as possible get an alpha build into your hands so you can get
+                            a hands on impression of the game in order to well "kick-start" the general support for the game.</p>
+
+                        <p>
+                            <h2 class="display-5 blog-section">When will we see some gameplay?</h2>
+                        </p>
+                        <p>
+                            Taking into consideration the feedback initially given on the game, there have been some animation passes to improve the
+                            animations and make them feel a lot snappier, add visual indicators and center of body hitboxes
+                            for moves that look like they should hit. This all leading up so you can get an idea of how the
+                            game will look in it's initial alpha/beta state. The reason I haven't posted anything yet is
+                            mainly due to being the sole developer. In order to record quality gameplay I could simply just
+                            have me playing against the AI I programmed and showing off cool combos, but that really doesn't
+                            give you the full impression of the defensive options in the game nor the strengths of the character
+                            being combo'd. Not to mention, since I programmed the behavior I can pretty much predict what
+                            the bot will do at any given moment, making for extremely one sided fights. So this weekend I'm
+                            having a playtest session with some colleges who are about the same skill as I was (in SSBM).
+                            And that will give you a clearer picture on how exactly character will play at a medium level.
+                            So that will likely be coming this weekend and I look forward to showing off some intense gameplay.</p>
+
+                        <p>
+                            <h2 class="display-5 blog-section">Updates</h2>
+                        </p>
+                        <p>I've always liked the idea of alternate weather effects on maps in game. Usually when most triple
+                            A games come out now, there are always requests in the community for "wouldn't this be awesome
+                            if [___] had a night map?" Followed by a mock-up or piece of artwork for that map some of the
+                            time. So as an option (to not hurt competitive integrity) you will be able to select alternative
+                            weather modes for each map where appropriate. So the Colosseum for example will have it's default
+                            day mode, a night mode and a thunderstorm/overcast mode. Steps will of course be taken to optimize
+                            these options such that there is no noticeable FPS issues when switching between map versions.
+                            To see how some will look, check out the "Stages" tab over in the learn more section.</p>
+
+                        <p>As always thank you for your support and I look forward to sharing more about the game in the near
+                            future, keep an eye out!</p>
+                    </div>
+                </section>
+                <hr>
+            </div>
+        </div>
+        <div class="row content-row overview" aria-label="overview">
+            <div class="col-12 col-sm-12 offset-md-3 col-md-6">
+                <section id="firstPost">
+                    <h2 class="post-title display-4">March 16th, 2017</h2>
+                    <div class="row-blog">
+                        <p> The very first blog post, we'll try to use these for more official announcements, if you'd like to
+                            keep up to date with daily changes and improvements to the game, follow the twitter @MeleeMasters.
+                            There you will see posts relating to the day to day improvements such as character implementations,
+                            features fixed or finished, ect.</p>
+                        <p>Gameplay videos should be coming soon, along with more details on mechanics, stages filled in, keep
+                            an eye out!</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</body>
